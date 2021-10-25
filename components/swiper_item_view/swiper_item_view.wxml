@@ -1,0 +1,17 @@
+<!--components/swiper_item_view/swiper_item_view.wxml-->
+<scroll-view>
+  <view class="box">
+    <view class="type_title">
+      <view class="type" wx:if="{{item.questionType == 0}}">单选</view>
+      <view class="type" wx:elif="{{item.questionType == 1}}">多选</view>
+      <view class="type" wx:elif="{{item.questionType == 2}}">判断</view>
+      <view class="title">{{item.questionDescription}}</view>
+    </view>
+    <view class="options">
+      <view class="option_item" wx:for="{{item.options}}" wx:for-index="oIndex" wx:for-item="oItem" wx:key="oi">
+        <view>{{oItem.questionOption}}</view>
+        <view>{{oItem.optionContent}}</view>
+      </view>
+    </view>
+  </view>
+</scroll-view>

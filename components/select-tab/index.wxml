@@ -1,0 +1,7 @@
+<view class="nav_content">
+  <block wx:for="{{options}}" wx:key="index">
+    <view class="tab_btn" bindtap="selectTab" data-item="{{item}}">
+      <text class="{{selectTab.id==item.id?'nav_ced':'nav_c'}}">{{item.name}}</text>
+    </view>
+  </block>
+</view>

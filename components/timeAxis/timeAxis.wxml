@@ -1,0 +1,35 @@
+<view class='itemTimeZ'>
+  <!--  左边 -->
+  <view class='leftView'>
+    <view class='{{isCurent===true?"roundVIew":"outRoundVIew"}}'></view>
+    <view wx:if="{{isShowLeftLine}}" class='leftLine'>
+    </view>
+  </view>
+
+  <!-- 右边 -->
+  <view class='rightContent {{isLast ? "nopadding" : ""}}'>
+    <slot name="rightChilren"></slot>
+    <view class="titleView">
+      <text class='{{isHeadTitle === true ? "headTitle" : "subTitle"}}'>{{axisTitle}}</text>
+      <image src="/images/bianji@2x.png" mode="aspectFit" bindtap="editTap" data-index="{{index}}"></image>
+    </view>
+    <view wx:if='{{isHeadTitle === true}}' class="axisContent" style="margin-top: 30rpx;">
+      <text class="axis_text">实习内容</text>
+      <view class="axis_view">{{content1}}</view>
+    </view>
+    <view wx:if='{{isHeadTitle === true}}' class="axisContent">
+      <text class="axis_text">实习小结与体会</text>
+      <view class="axis_view">{{content2}}</view>
+    </view>
+    <view wx:else class="subContent">
+      <text class="sub_text">{{content1}}</text>
+    </view>
+
+    <!-- <block wx:if="{{textArray.length>0}}">
+      <text wx:for="{{textArray}}" wx:key="unique"
+        class='{{isCurent === true? "curentTitle" : "outTitle"}}'>{{item}}</text>
+    </block>
+    <text wx:if="{{axisTitle!=''}}" class='{{isCurent === true? "curentTitle" : "outTitle"}}'>{{axisTitle}}</text>
+    <text class='{{isCurent === true? "curentTime" : "outTime"}}'>{{axisTime}}</text> -->
+  </view>
+</view>

@@ -1,0 +1,29 @@
+<view class="tool_bar">
+  <view class="tool_content" style="top: {{stateHeight + 44}}px;">
+    <view class="filter_top">
+      <view class="tool_title">{{title}}</view>
+      <view class="filter" bindtap="openClose">
+        <text class="title_txt">{{current.name}}</text>
+        <image
+          class="title_img"
+          src="{{isShow ? '/images/course_up@2x.png' : '/images/course_down@2x.png'}}"
+          mode="AspectFit"
+        />
+      </view>
+    </view>
+    <view class="filter_bottom" catchtouchmove="handleTouchmove" bindtap="close" wx:if="{{isShow}}">
+      <view class="filter_pro">
+        <block wx:for="{{options}}" wx:key="index">
+          <view
+            class="filter_item {{item.name===current.name ? 'active' : ''}}"
+            catchtap="optionTap"
+            data-item="{{item}}"
+          >
+            {{item.name}}
+            <image class="option_img" src="/images/tick-fill@2x.png" mode="AspectFit" />
+          </view>
+        </block>
+      </view>
+    </view>
+  </view>
+</view>

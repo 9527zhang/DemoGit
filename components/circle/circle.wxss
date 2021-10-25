@@ -1,0 +1,29 @@
+.circle_box,.circle_draw{ position: relative; }
+.circle_bg{position: absolute;}
+.circle_box{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.circle_content {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.circle_txt{
+  /* position: absolute; */
+  font-size: 90rpx;
+  font-weight: bold;
+}
+
+.circle_sub {
+    /* position: absolute; */
+    font-weight: 500;
+    font-size: 24rpx;
+    color: #666666;
+}

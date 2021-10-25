@@ -1,0 +1,20 @@
+<view class="nav" style="padding-top: {{stateHeight * 2}}rpx;">
+  <view class="nav_bar" style="padding-top: {{stateHeight * 2}}rpx;">
+    <view class="nav_items">
+      <view class="back" bindtap="goBack">
+        <image src="/components/navigation/back.png" mode="AspectFit" class="back_img" />
+      </view>
+      <view class="search_input">
+        <image src="/images/sousuo@2x.png" mode="AspectFit" class="search_img" bindtap="search" />
+        <input
+          class="input"
+          focus="true"
+          confirm-type="search"
+          bindinput="inputValue"
+          placeholder="请输入搜索内容/关键词"
+          placeholder-class="search_title"
+        />
+      </view>
+    </view>
+  </view>
+</view>

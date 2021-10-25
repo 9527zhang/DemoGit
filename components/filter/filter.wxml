@@ -1,0 +1,36 @@
+<view class="box" hidden="{{!hideModal}}" catchtouchmove="preventTouchMove">
+    <view class="empty-box" bindtap="hideModal" id="empty-box"></view>
+    <view class="content">
+        <view class="choose_title box_type">题型选择</view>
+        <view class="chooseQuesType">
+            <view class="choose_item {{ selectType == 0 ? 'active' : 'normal' }}" bindtap="chooseType" data-index="0">
+                <image class="choose_item_img" src="{{ selectType == 0 ? 'single-s.png' : 'single.png' }}" mode="AspectFit"></image>
+                <view class="choose_item_title box_title {{ selectType == 0 ? 'active' : 'normal' }}">单选</view>
+            </view>
+            <view class="choose_item {{ selectType == 1 ? 'active' : 'normal' }}" bindtap="chooseType" data-index="1">
+                <image class="choose_item_img" src="{{ selectType == 1 ? 'mutil-s.png' : 'mutil.png' }}" mode="AspectFit"></image>
+                <view class="choose_item_title box_title {{ selectType == 1 ? 'active' : 'normal' }}">多选</view>
+            </view>
+            <view class="choose_item {{ selectType == 2 ? 'active' : 'normal' }}" bindtap="chooseType" data-index="2">
+                <image class="choose_item_img" src="{{ selectType == 2 ? 'judge-s.png' : 'judge.png' }}" mode="AspectFit"></image>
+                <view class="choose_item_title box_title {{ selectType == 2 ? 'active' : 'normal' }}">判断</view>
+            </view>
+        </view>
+        <view class="degree_title box_type">难易程度</view>
+        <view class="degreeOfDiff">
+            <view class="degree_item box_title {{ selectDegree == 3 ? 'active' : 'normal' }}" bindtap="chooseDegree" data-index="3">全部</view>
+            <view class="degree_item box_title {{ selectDegree == 0 ? 'active' : 'normal' }}" bindtap="chooseDegree" data-index="0">简单</view>
+            <view class="degree_item box_title {{ selectDegree == 1 ? 'active' : 'normal' }}" bindtap="chooseDegree" data-index="1">中等</view>
+            <view class="degree_item box_title {{ selectDegree == 2 ? 'active' : 'normal' }}" bindtap="chooseDegree" data-index="2">困难</view>
+        </view>
+        <view class="action_part" style="margin-bottom: {{mb}}rpx;">
+            <view class="reset_part" bindtap="reset">
+                <image class="reset_img" src="reset.png" mode="AspectFit"></image>
+                <view class="reset_title">重置</view>
+            </view>
+            <view class="start_part">
+                <button class="start_button" bindtap="startPractice">开始练习</button>
+            </view>
+        </view>
+    </view>
+</view>
